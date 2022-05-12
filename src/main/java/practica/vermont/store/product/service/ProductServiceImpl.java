@@ -1,6 +1,7 @@
 package practica.vermont.store.product.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import practica.vermont.store.product.entity.Category;
 import practica.vermont.store.product.entity.Product;
 import practica.vermont.store.product.repository.ProductRepository;
@@ -8,10 +9,12 @@ import practica.vermont.store.product.repository.ProductRepository;
 import java.util.Date;
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService{
 
-    @Autowired
-    private ProductRepository productRepository;
+
+    private final ProductRepository productRepository;
 
     @Override
     public List<Product> listAllProduct() {
